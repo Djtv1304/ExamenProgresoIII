@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProductoMVVMSQLite.Views.TresEnRaya"
+             Title="TresEnRaya">
+    <StackLayout>
+        <Label Text="Intento jugador: "
+               
+            />
+        <Grid x:Name="TableroGrid" HorizontalOptions="Center" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Aquí es donde colocas los botones para cada celda del tablero -->
+            <Button Grid.Row="0" Grid.Column="0" Text="{Binding Tablero[0, 0]}" Clicked="OnButtonClicked" />
+            <Button Grid.Row="0" Grid.Column="1" Text="{Binding Tablero[0, 1]}" Clicked="OnButtonClicked" />
+            <Button Grid.Row="0" Grid.Column="2" Text="{Binding Tablero[0, 2]}" Clicked="OnButtonClicked" />
+            <Button Grid.Row="1" Grid.Column="0" Text="{Binding Tablero[1, 0]}" Clicked="OnButtonClicked" />
+            <Button Grid.Row="1" Grid.Column="1" Text="{Binding Tablero[1, 1]}" Clicked="OnButtonClicked" />
+            <Button Grid.Row="1" Grid.Column="2" Text="{Binding Tablero[1, 2]}" Clicked="OnButtonClicked" />
+            <Button Grid.Row="2" Grid.Column="0" Text="{Binding Tablero[2, 0]}" Clicked="OnButtonClicked" />
+            <Button Grid.Row="2" Grid.Column="1" Text="{Binding Tablero[2, 1]}" Clicked="OnButtonClicked" />
+            <Button Grid.Row="2" Grid.Column="2" Text="{Binding Tablero[2, 2]}" Clicked="OnButtonClicked" />
+        </Grid>
+
+        <Button Text="Iniciar/Resetear Juego" Command="{Binding IniciarResetearJuegoCommand}" />
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" Text="Jugador 1" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Grid.Column="1" Text="Jugador 2" HorizontalOptions="Center" VerticalOptions="Center" />
+        </Grid>
+    </StackLayout>
+</ContentPage>
